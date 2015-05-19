@@ -26,8 +26,12 @@ var movie = React.createClass({
         this.setState({movies: responseData});
       }).done();
   },
-  renderMovie: function(){
-
+  renderMovie: function(movie){
+    return (
+        <View style={styles.listContainer}>
+          <Image source={{uri:movie.posters.thumbnail}} style={styles.listImage}/>
+        </View>
+      );
   },
   render: function() {
     return (
